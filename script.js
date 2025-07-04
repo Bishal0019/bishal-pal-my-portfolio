@@ -7,8 +7,10 @@
         const line3 = document.getElementById('line3')
         const lines = document.querySelectorAll('.line')
         const menuWrapper = document.getElementById('menu-wrapper')
+        const navButton = document.querySelector('.nav-button')
 
         menuCheckButton.addEventListener('change', () => {
+
             if (menuCheckButton.checked) {
                 menuBar.style.right = '0'
                 line2.style.transform = 'scaleX(0)'
@@ -30,5 +32,23 @@
                 menuWrapper.style.transform = 'rotate(0deg)'
             }
         })
+
+        document.addEventListener('click', (e) => {
+            const isInside = navButton.contains(e.target)
+            if (!isInside && menuCheckButton.checked) {
+                menuCheckButton.checked = false;
+                menuCheckButton.dispatchEvent(new Event('change'))
+            }
+        })
+
+        const links = document.querySelectorAll('a')
+        links.forEach(element => {
+            element.addEventListener('click', () => {
+                if (menuCheckButton.checked) {
+                    menuCheckButton.checked = false;
+                    menuCheckButton.dispatchEvent(new Event('change'))
+                }
+            })
+        });
     })
 }
