@@ -388,6 +388,67 @@ section {
     color: rgb(0, 143, 96);
 }
 
+.projects-section h2 {
+    color: transparent;
+    background: linear-gradient(135deg, blue, purple);
+    background-clip: text;
+    margin-bottom: 5px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.projects-section .devider{
+    width: 100%;
+    height: 2px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, blue, purple);
+}
+
+.project-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-wrapper .toggle{
+    position: relative;
+    width: 50%;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all ease-in-out 0.3s 0.1s;
+}
+
+.project-wrapper .toggle::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, blue, purple);
+    z-index: -1;
+    transform-origin: bottom;
+    transform: scaleY(0.1);
+    border-radius: inherit;
+    transition: all ease-in-out 0.4s;
+}
+
+.project-wrapper .toggle:hover{
+    color: white;
+}
+
+.project-wrapper .toggle:hover::after{
+    transform: scaleY(1);
+}
+
 @media screen and (max-width: 768px) {
     .nav-button{
         display: block;
@@ -414,6 +475,10 @@ section {
     .profile-container .text .buttons {
         justify-content: center;
         margin-left: 0;
+    }
+
+    .project-wrapper .toggle{
+        width: 90%;
     }
 
 }
