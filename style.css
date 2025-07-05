@@ -452,12 +452,8 @@ section {
     transition: all ease-in-out 0.4s;
 }
 
-.project-wrapper .toggle:hover h4{
-    color: white;
-}
-
-.project-wrapper .toggle:hover::after{
-    transform: scaleY(1);
+.project-wrapper .toggle:hover{
+    cursor: pointer;
 }
 
 .project-wrapper .toggle.active h4{
@@ -470,7 +466,6 @@ section {
 
 .project-wrapper .toggle .project-container{
     width: 90%;
-    height: 90%;
     margin-top: 10px;
     padding: 20px;
     display: none;
@@ -486,6 +481,7 @@ section {
 .project-wrapper .toggle .project-container .screenshot{
     width: 90%;
     height: 30%;
+    margin-bottom: 10px;
 }
 
 .project-wrapper .toggle .project-container .screenshot img{
@@ -495,12 +491,13 @@ section {
 }
 
 .project-wrapper .toggle .project-container p{
-    font-size: 12px;
+    font-size: 8px;
     color: #555;
     text-align: justify;
 }
 
 .navigation-buttons{
+    margin-top: 10px;
     width: 100%;
     padding: 0px 10px;
     gap: 10px;
@@ -509,6 +506,7 @@ section {
 }
 
 .navigation-buttons a{
+    font-size: 10px;
     width: 50%;
     border: 2px solid;
     text-decoration: none;
