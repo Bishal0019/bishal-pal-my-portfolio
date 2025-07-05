@@ -65,8 +65,8 @@ body{
     top: 0px;
     min-width: 150px;
     height: 100vh;
-    background-color: rgba(59, 59, 59, 0.2);
-    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
     padding: 20px;
     transition: all ease-in-out 0.5s;
 }
@@ -84,7 +84,7 @@ body{
     margin-bottom: 15px;
     padding: 0px 10px;
     font-weight: 600;
-    color: black;
+    color: white;
     position: relative;
     transition-duration: 0.3s;
 }
@@ -96,7 +96,7 @@ body{
     height: 3px;
     border-radius: 10px;
     transform-origin: left;
-    background-color: black;
+    background-color: white;
     transform: scaleX(0);
 
     transition: transform ease-in-out 0.3s;
@@ -104,7 +104,7 @@ body{
 
 .menu-options ul a li:hover{
     transform: scale(1.1);
-    color: black;
+    color: white;
 }
 
 .menu-options ul a li:hover .underline{
