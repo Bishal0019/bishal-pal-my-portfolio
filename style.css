@@ -515,10 +515,134 @@ section {
     border-radius: 8px;
     padding: 3px;
     transition-duration: 0.4s;
+    transition: all ease-in-out 0.3s 0.1s;
 }
 
 .navigation-buttons a:hover{
     background-color: black;
+}
+
+.contact-section{
+    box-shadow: none;
+}
+
+.contact-section h2 {
+    color: transparent;
+    background: linear-gradient(135deg, blue, purple);
+    background-clip: text;
+    margin-bottom: 5px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.contact-section .devider{
+    width: 100%;
+    height: 2px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, blue, purple);
+}
+
+.contact-section ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.contact-section ul li{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.contact-section ul li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    width: 100%;
+    padding: 15px;
+    background: whitesmoke;
+    border-radius: 10px;
+    position: relative;
+    font-weight: 600;
+}
+
+.contact-section ul li a img,span,svg{
+    z-index: 1;
+}
+
+.contact-section ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    z-index: 0;
+    transform-origin: bottom;
+    transform: scaleY(0.1);
+    transition: all ease-in-out 0.4s;
+}
+
+.contact-section ul li .mail::after{
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.contact-section ul li .insta::after{
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.contact-section ul li .linkedin::after{
+    background-color: #0a66c2;
+}
+
+.contact-section ul li .github::after{
+    background-color: #2b3137;
+}
+
+.contact-section ul li a:hover::after{
+    transform: scaleY(1);
+}
+
+.contact-section ul li a:hover img{
+    filter: invert(1);
+}
+
+.contact-section ul li a:hover svg{
+    filter: invert(1);
+}
+
+.contact-section ul li a:hover .text{
+    color: white;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    font-size: 14px;
+    background: linear-gradient(white,black);
+}
+
+footer .text{
+    color: white;
+}
+
+footer .sign{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    gap: 3px;
+}
+
+footer .sign span{
+    color: white;
+    font-size: 10px;
 }
 
 @media screen and (max-width: 768px) {
