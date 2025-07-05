@@ -414,8 +414,13 @@ section {
 }
 
 .project-wrapper .toggle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 50%;
+    height: 10vh;
     border: none;
     padding: 15px;
     font-size: 16px;
@@ -424,6 +429,12 @@ section {
     overflow: hidden;
     border-radius: 10px;
     transition: all ease-in-out 0.3s 0.1s;
+}
+
+.project-wrapper .toggle h4{
+    transition: all ease-in-out 0.3s 0.1s;
+    position: absolute;
+    top: 3vh;
 }
 
 .project-wrapper .toggle::after{
@@ -441,12 +452,75 @@ section {
     transition: all ease-in-out 0.4s;
 }
 
-.project-wrapper .toggle:hover{
+.project-wrapper .toggle:hover h4{
     color: white;
 }
 
 .project-wrapper .toggle:hover::after{
     transform: scaleY(1);
+}
+
+.project-wrapper .toggle.active h4{
+    color: white;
+}
+
+.project-wrapper .toggle.active::after{
+    transform: scaleY(1);
+}
+
+.project-wrapper .toggle .project-container{
+    width: 90%;
+    height: 90%;
+    margin-top: 10px;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3) inset;
+}
+
+.project-wrapper .toggle .project-container .screenshot{
+    width: 90%;
+    height: 30%;
+}
+
+.project-wrapper .toggle .project-container .screenshot img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.project-wrapper .toggle .project-container p{
+    font-size: 12px;
+    color: #555;
+    text-align: justify;
+}
+
+.navigation-buttons{
+    width: 100%;
+    padding: 0px 10px;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation-buttons a{
+    width: 50%;
+    border: 2px solid;
+    text-decoration: none;
+    background-color: gray;
+    color: white;
+    border-radius: 8px;
+    padding: 3px;
+    transition-duration: 0.4s;
+}
+
+.navigation-buttons a:hover{
+    background-color: black;
 }
 
 @media screen and (max-width: 768px) {
