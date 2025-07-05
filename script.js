@@ -66,7 +66,7 @@
                 projectToggle.classList.toggle('active')
 
                 if (isVisible) {
-                    projectToggle.style.minHeight = '70vh'
+                    projectToggle.style.minHeight = '400px'
                     setTimeout(() => {
                         projectContainer.style.display = 'flex'
                     }, 400);
