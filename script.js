@@ -66,15 +66,15 @@
                 projectToggle.classList.toggle('active')
 
                 if (isVisible) {
-                    projectToggle.style.height = '80vh'
+                    projectToggle.style.minHeight = '70vh'
                     setTimeout(() => {
                         projectContainer.style.display = 'flex'
-                    }, 300);
+                    }, 400);
                 }
                 else {
                     projectContainer.style.display = 'none'
                     setTimeout(() => {
-                        projectToggle.style.height = '10vh'
+                        projectToggle.style.minHeight = '10vh'
                     }, 10);
                 }
             })
