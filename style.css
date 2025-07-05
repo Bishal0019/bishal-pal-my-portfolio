@@ -466,7 +466,7 @@ section {
 .project-wrapper .toggle .project-container{
     width: 90%;
     height: 300px;
-    margin-top: 40px;
+    margin-top: 50px;
     padding: 20px;
     display: none;
     flex-direction: column;
