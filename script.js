@@ -52,3 +52,32 @@
         });
     })
 }
+
+{
+    document.addEventListener("DOMContentLoaded", () => {
+        const projectToggles = document.querySelectorAll('.toggle')
+
+        projectToggles.forEach((projectToggle) => {
+            const projectContainer = projectToggle.querySelector('.project-container')
+            let isVisible = false;
+
+            projectToggle.addEventListener('click', (e) => {
+                isVisible = !isVisible;
+                projectToggle.classList.toggle('active')
+
+                if (isVisible) {
+                    projectToggle.style.height = '80vh'
+                    setTimeout(() => {
+                        projectContainer.style.display = 'flex'
+                    }, 300);
+                }
+                else {
+                    projectContainer.style.display = 'none'
+                    setTimeout(() => {
+                        projectToggle.style.height = '10vh'
+                    }, 10);
+                }
+            })
+        })
+    })
+}
