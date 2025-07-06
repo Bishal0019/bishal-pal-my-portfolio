@@ -495,9 +495,10 @@ section {
     align-items: center;
     position: relative;
     width: 50%;
-    min-height: 10vh;
+    min-height: 80px;
     border: none;
     padding: 15px;
+    padding-bottom: 30px;
     font-size: 16px;
     font-weight: 600;
     z-index: 1;
@@ -509,7 +510,7 @@ section {
 .project-wrapper .toggle h4{
     transition: all ease-in-out 0.3s 0.1s;
     position: absolute;
-    top: 3vh;
+    top: 28px;
 }
 
 .project-wrapper .toggle::after{
@@ -541,8 +542,8 @@ section {
 
 .project-wrapper .toggle .project-container{
     width: 90%;
-    height: 300px;
-    margin-top: 50px;
+    height: 80%;
+    margin-top: 60px;
     padding: 20px;
     display: none;
     flex-direction: column;
@@ -567,7 +568,7 @@ section {
 }
 
 .project-wrapper .toggle .project-container p{
-    font-size: 8px;
+    font-size: 45%;
     color: #555;
     text-align: justify;
 }
@@ -582,7 +583,7 @@ section {
 }
 
 .navigation-buttons a{
-    font-size: 10px;
+    font-size: 60%;
     width: 50%;
     border: 2px solid;
     text-decoration: none;
