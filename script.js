@@ -1,4 +1,11 @@
 {
+    AOS.init({
+            offse: 0,
+            easing: 'ease-in-out'
+        });
+}
+
+{
     document.addEventListener("DOMContentLoaded", () => {
         const menuCheckButton = document.getElementById('menu-button')
         const menuBar = document.getElementById('menu-bar')
