@@ -643,6 +643,7 @@ section {
     border-radius: 10px;
     position: relative;
     font-weight: 600;
+    font-size: 80%;
 }
 
 .contact-section ul li a img,span,svg{
