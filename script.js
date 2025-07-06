@@ -81,7 +81,7 @@
                 else {
                     projectContainer.style.display = 'none'
                     setTimeout(() => {
-                        projectToggle.style.minHeight = '10vh'
+                        projectToggle.style.minHeight = '80px'
                     }, 10);
                 }
             })
