@@ -1,9 +1,51 @@
 {
     AOS.init({
-            offse: 0,
-            easing: 'ease-in-out'
-        });
+        offse: 0,
+        easing: 'ease-in-out'
+    });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggles = document.querySelectorAll('.toggle-switch')
+    const root = document.documentElement
+
+    const savedTheme = localStorage.getItem('dark-mode') === 'true'  // true or false (as string)
+
+    toggles.forEach(toggle => {
+        toggle.checked = savedTheme // Set toggle position
+
+        applyTheme(savedTheme)
+
+        toggle.addEventListener('change', () => {
+            const isDark = toggle.checked
+            applyTheme(isDark)
+            localStorage.setItem('dark-mode', isDark) // Save preference
+        })
+    })
+
+    function applyTheme(isDark) {
+        if (isDark) {
+            root.style.setProperty('--mainBackground', 'hsl(0,0%,0%)')
+            root.style.setProperty('--sectionBackground', 'hsl(0,0%,10%)')
+            root.style.setProperty('--textHover', 'hsl(0,0%,100%)')
+            root.style.setProperty('--navbar', 'hsla(0,0%,40%,0.9)')
+            root.style.setProperty('--navOptions', 'hsl(0,0%,80%)')
+            root.style.setProperty('--sidebar','hsla(0, 0%, 50%, 0.3)')
+            root.style.setProperty('--buttonColor','hsl(0,0%,40%)')
+            root.style.setProperty('--textColor','hsl(0,0%,70%)')
+        } else {
+            root.style.setProperty('--mainBackground', 'hsl(0,0%,95%)')
+            root.style.setProperty('--sectionBackground', 'hsl(0,0%,100%)')
+            root.style.setProperty('--textHover', 'hsl(0,0%,0%)')
+            root.style.setProperty('--navbar', 'hsla(0,0%,80%,0.9)')
+            root.style.setProperty('--navOptions', 'hsl(0,0%,50%)')
+            root.style.setProperty('--sidebar','hsla(0,0%,0%,0.3)')
+            root.style.setProperty('--buttonColor','hsl(0,0%,95%)')
+            root.style.setProperty('--textColor','hsl(0,0%,40%)')
+        }
+    }
+})
+
 
 {
     document.addEventListener("DOMContentLoaded", () => {
