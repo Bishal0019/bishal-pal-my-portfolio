@@ -1,140 +1,421 @@
-// ✅ AOS init FIXED (offset typo corrected)
-AOS.init({
-    offset: 0,
-    easing: 'ease-in-out'
+/**
+ * ==========================================================================
+ * BISHAL PAL PORTFOLIO — CORE SCRIPT
+ * Vanilla JavaScript (ES6+) — Zero external runtime dependencies
+ * ==========================================================================
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    initReadingProgress();
+    initNavigation();
+    initMobileDrawer();
+    initScrollSpy();
+    initScrollReveal();
+    initSkillsFilter();
+    initProjectLightbox();
+    initCopyEmail();
+    initQuickComposer();
+    initCopyrightYear();
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const toggles = document.querySelectorAll('.toggle-switch');
-    const root = document.documentElement;
+/**
+ * --------------------------------------------------------------------------
+ * 1. THEME SWITCHER (Dark & Light Mode with Persistence & System Detection)
+ * --------------------------------------------------------------------------
+ */
+function initTheme() {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
 
-    const savedTheme = localStorage.getItem('dark-mode') === 'true';
+    // Retrieve saved theme or infer from system preference
+    const savedTheme = localStorage.getItem('bp_theme') ||
+        (localStorage.getItem('dark-mode') === 'false' ? 'light' : null);
 
-    toggles.forEach(toggle => {
-        toggle.checked = savedTheme;
-        applyTheme(savedTheme);
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'dark'); // Default dark
 
-        toggle.addEventListener('change', () => {
-            const isDark = toggle.checked;
+    applyTheme(initialTheme);
 
-            // ✅ sync both toggles always
-            toggles.forEach(t => t.checked = isDark);
-
-            applyTheme(isDark);
-            localStorage.setItem('dark-mode', isDark);
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlEl.getAttribute('data-theme') || 'dark';
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(nextTheme);
+            localStorage.setItem('bp_theme', nextTheme);
         });
-    });
+    }
 
-    function applyTheme(isDark) {
-        if (isDark) {
-            root.style.setProperty('--mainBackground', 'hsl(0,0%,0%)');
-            root.style.setProperty('--sectionBackground', 'hsl(0,0%,10%)');
-            root.style.setProperty('--textHover', 'hsl(0,0%,100%)');
-            root.style.setProperty('--navbar', 'hsla(0,0%,40%,0.9)');
-            root.style.setProperty('--navOptions', 'hsl(0,0%,80%)');
-            root.style.setProperty('--sidebar', 'hsla(0, 0%, 50%, 0.3)');
-            root.style.setProperty('--buttonColor', 'hsl(0,0%,40%)');
-            root.style.setProperty('--textColor', 'hsl(0,0%,70%)');
-        } else {
-            root.style.setProperty('--mainBackground', 'hsl(0,0%,95%)');
-            root.style.setProperty('--sectionBackground', 'hsl(0,0%,100%)');
-            root.style.setProperty('--textHover', 'hsl(0,0%,0%)');
-            root.style.setProperty('--navbar', 'hsla(0,0%,80%,0.9)');
-            root.style.setProperty('--navOptions', 'hsl(0,0%,50%)');
-            root.style.setProperty('--sidebar', 'hsla(0,0%,0%,0.3)');
-            root.style.setProperty('--buttonColor', 'hsl(0,0%,95%)');
-            root.style.setProperty('--textColor', 'hsl(0,0%,40%)');
+    function applyTheme(theme) {
+        htmlEl.setAttribute('data-theme', theme);
+        if (metaThemeColor) {
+            metaThemeColor.setAttribute('content', theme === 'dark' ? '#0B0C0E' : '#F7F7F5');
         }
     }
-});
 
-
-// ✅ Mobile menu script (updated sidebar width handling)
-document.addEventListener("DOMContentLoaded", () => {
-    const menuCheckButton = document.getElementById('menu-button');
-    const menuBar = document.getElementById('menu-bar');
-
-    const line1 = document.getElementById('line1');
-    const line2 = document.getElementById('line2');
-    const line3 = document.getElementById('line3');
-
-    const lines = document.querySelectorAll('.line');
-    const menuWrapper = document.getElementById('menu-wrapper');
-    const navButton = document.querySelector('.nav-button');
-
-    menuCheckButton.addEventListener('change', () => {
-        const sidebarWidth = window.innerWidth <= 768 ? 220 : 150;
-
-        if (menuCheckButton.checked) {
-            menuBar.style.right = '0';
-            line2.style.transform = 'scaleX(0)';
-
-            lines.forEach(element => {
-                element.style.position = 'absolute';
-            });
-
-            line1.style.transform = 'rotate(45deg)';
-            line3.style.transform = 'rotate(-45deg)';
-            menuWrapper.style.transform = 'rotate(180deg)';
-        } else {
-            menuBar.style.right = `-${sidebarWidth}px`;
-            line2.style.transform = 'scaleX(1)';
-
-            lines.forEach(element => {
-                element.style.position = 'static';
-            });
-
-            line1.style.transform = 'rotate(0deg)';
-            line3.style.transform = 'rotate(0deg)';
-            menuWrapper.style.transform = 'rotate(0deg)';
-        }
-    });
-
-    document.addEventListener('click', (e) => {
-        const isInside = navButton.contains(e.target);
-        if (!isInside && menuCheckButton.checked) {
-            menuCheckButton.checked = false;
-            menuCheckButton.dispatchEvent(new Event('change'));
-        }
-    });
-
-    const links = document.querySelectorAll('a');
-    links.forEach(element => {
-        element.addEventListener('click', () => {
-            if (menuCheckButton.checked) {
-                menuCheckButton.checked = false;
-                menuCheckButton.dispatchEvent(new Event('change'));
+    // Listen for system preference changes if user hasn't set an explicit preference
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('bp_theme')) {
+                applyTheme(e.matches ? 'dark' : 'light');
             }
         });
-    });
-});
+    }
+}
 
+/**
+ * --------------------------------------------------------------------------
+ * 2. READING PROGRESS BAR & STICKY HEADER STATE
+ * --------------------------------------------------------------------------
+ */
+function initReadingProgress() {
+    const progressBar = document.getElementById('scroll-progress');
+    const header = document.getElementById('site-header');
 
-// ✅ Project dropdown toggle
-document.addEventListener("DOMContentLoaded", () => {
-    const projectToggles = document.querySelectorAll('.toggle');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
 
-    projectToggles.forEach((projectToggle) => {
-        const projectContainer = projectToggle.querySelector('.project-container');
-        let isVisible = false;
+        if (progressBar) {
+            progressBar.style.width = `${progress}%`;
+        }
 
-        projectToggle.addEventListener('click', (e) => {
-            e.preventDefault(); // ✅ mobile tap smooth
-            isVisible = !isVisible;
-
-            projectToggle.classList.toggle('active');
-
-            if (isVisible) {
-                projectToggle.style.minHeight = '400px';
-                setTimeout(() => {
-                    projectContainer.style.display = 'flex';
-                }, 400);
+        if (header) {
+            if (scrollTop > 25) {
+                header.classList.add('scrolled');
             } else {
-                projectContainer.style.display = 'none';
-                setTimeout(() => {
-                    projectToggle.style.minHeight = '80px';
-                }, 10);
+                header.classList.remove('scrolled');
+            }
+        }
+    }, { passive: true });
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 3. DESKTOP NAVIGATION & SMOOTH SCROLLING
+ * --------------------------------------------------------------------------
+ */
+function initNavigation() {
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href');
+            if (targetId === '#' || targetId === '') return;
+
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                e.preventDefault();
+                const headerOffset = 70;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             }
         });
     });
-});
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 4. MOBILE DRAWER NAVIGATION
+ * --------------------------------------------------------------------------
+ */
+function initMobileDrawer() {
+    const mobileBtn = document.getElementById('mobile-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    if (!mobileBtn || !drawer) return;
+
+    function toggleDrawer(open) {
+        const isOpen = open !== undefined ? open : !drawer.classList.contains('open');
+        drawer.classList.toggle('open', isOpen);
+        mobileBtn.classList.toggle('active', isOpen);
+        mobileBtn.setAttribute('aria-expanded', isOpen.toString());
+        drawer.setAttribute('aria-hidden', (!isOpen).toString());
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    mobileBtn.addEventListener('click', () => toggleDrawer());
+
+    drawerLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            toggleDrawer(false);
+        });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && drawer.classList.contains('open')) {
+            toggleDrawer(false);
+        }
+    });
+
+    // Close if resized to desktop viewport
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 900 && drawer.classList.contains('open')) {
+            toggleDrawer(false);
+        }
+    }, { passive: true });
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 5. SCROLLSPY (Active Navigation Highlighting)
+ * --------------------------------------------------------------------------
+ */
+function initScrollSpy() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.desktop-nav .nav-link');
+
+    if (sections.length === 0 || navLinks.length === 0) return;
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -65% 0px',
+        threshold: 0
+    };
+
+    const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const activeId = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === `#${activeId}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => spyObserver.observe(section));
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 6. SCROLL REVEAL ANIMATIONS (IntersectionObserver based)
+ * --------------------------------------------------------------------------
+ */
+function initScrollReveal() {
+    const revealItems = document.querySelectorAll('.reveal-item');
+    if (revealItems.length === 0) return;
+
+    // Respect user's motion preferences
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        revealItems.forEach(el => el.classList.add('in-view'));
+        return;
+    }
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, idx) => {
+            if (entry.isIntersecting) {
+                // Subtle stagger delay
+                setTimeout(() => {
+                    entry.target.classList.add('in-view');
+                }, (idx % 4) * 80);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.1
+    });
+
+    revealItems.forEach(el => revealObserver.observe(el));
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 7. SKILLS FILTER TABS
+ * --------------------------------------------------------------------------
+ */
+function initSkillsFilter() {
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const skillCards = document.querySelectorAll('.skill-category-card');
+
+    if (filterTabs.length === 0 || skillCards.length === 0) return;
+
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const filterValue = tab.getAttribute('data-filter');
+
+            // Update tab states
+            filterTabs.forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+
+            // Filter cards with smooth opacity transition
+            skillCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 20);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(10px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 200);
+                }
+            });
+        });
+    });
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 8. PROJECT IMAGE LIGHTBOX
+ * --------------------------------------------------------------------------
+ */
+function initProjectLightbox() {
+    const viewports = document.querySelectorAll('.browser-viewport');
+    const modal = document.getElementById('image-lightbox');
+    const modalImg = document.getElementById('lightbox-img');
+    const modalCaption = document.getElementById('lightbox-caption');
+    const closeBtn = document.getElementById('lightbox-close');
+    const backdrop = document.getElementById('lightbox-backdrop');
+
+    if (!modal || !modalImg) return;
+
+    function openModal(imgSrc, imgAlt) {
+        modalImg.src = imgSrc;
+        modalImg.alt = imgAlt;
+        if (modalCaption) {
+            modalCaption.textContent = imgAlt;
+        }
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            modalImg.src = '';
+        }, 200);
+    }
+
+    viewports.forEach(vp => {
+        vp.addEventListener('click', () => {
+            const img = vp.querySelector('img');
+            if (img) {
+                openModal(img.src, img.alt);
+            }
+        });
+
+        // Allow opening via Enter key on focusable viewports
+        vp.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const img = vp.querySelector('img');
+                if (img) {
+                    openModal(img.src, img.alt);
+                }
+            }
+        });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (backdrop) backdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 9. ONE-CLICK EMAIL COPY WITH TACTILE FEEDBACK
+ * --------------------------------------------------------------------------
+ */
+function initCopyEmail() {
+    const copyBtn = document.getElementById('copy-email-btn');
+    if (!copyBtn) return;
+
+    copyBtn.addEventListener('click', async () => {
+        const email = copyBtn.getAttribute('data-email') || 'bishalpal0019@gmail.com';
+
+        try {
+            if (navigator.clipboard && window.isSecureContext) {
+                await navigator.clipboard.writeText(email);
+            } else {
+                // Fallback for non-https or older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = email;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+            }
+
+            copyBtn.classList.add('copied');
+
+            setTimeout(() => {
+                copyBtn.classList.remove('copied');
+            }, 2500);
+        } catch (err) {
+            console.error('Failed to copy email:', err);
+        }
+    });
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 10. QUICK MESSAGE COMPOSER (Opens mailto with pre-formatted subject & body)
+ * --------------------------------------------------------------------------
+ */
+function initQuickComposer() {
+    const form = document.getElementById('quick-mail-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('sender-name').value.trim();
+        const subject = document.getElementById('message-subject').value.trim();
+        const body = document.getElementById('message-body').value.trim();
+
+        const targetEmail = 'bishalpal0019@gmail.com';
+        const formattedSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject} - ${name}`);
+        const formattedBody = encodeURIComponent(`Hello Bishal,\n\n${body}\n\nBest regards,\n${name}`);
+
+        const mailtoUrl = `mailto:${targetEmail}?subject=${formattedSubject}&body=${formattedBody}`;
+        window.location.href = mailtoUrl;
+    });
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 11. DYNAMIC COPYRIGHT YEAR
+ * --------------------------------------------------------------------------
+ */
+function initCopyrightYear() {
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+}
