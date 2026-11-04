@@ -1,401 +1,1526 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="I'm Bishal Pal, a passionate full-stack developer skilled in JavaScript, React, Node.js, Next.js, MongoDB, and more. Explore my projects, skills, and background in web development." />
-    <title>Bishal's Portfolio</title>
+        content="Bishal Pal — Computer Science & Engineering student at KIIT. Full-stack developer specializing in modern web architectures, React, Next.js, and applied AI systems." />
+    <meta name="keywords"
+        content="Bishal Pal, Portfolio, Full-Stack Developer, KIIT, Computer Science, React, Next.js, Node.js, Web Development, India" />
+    <meta name="author" content="Bishal Pal" />
+    <meta name="theme-color" content="#0B0C0E" />
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bishal Pal — Portfolio &amp; Engineering Archive" />
+    <meta property="og:description"
+        content="Computer Science & Engineering student at KIIT. Building modern web experiences and applied intelligence systems." />
+    <meta property="og:url" content="https://bishalpal-portfolio.vercel.app/" />
+
+    <title>Bishal Pal — Portfolio &amp; Engineering Archive</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Google Fonts: Space Grotesk (Editorial Display), Plus Jakarta Sans (Reading), JetBrains Mono (Specs) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="nav-name">
-            <h1>Bishal Pal</h1>
-        </div>
+    <!-- Reading Progress Bar -->
+    <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
 
-        <div class="nav-button">
-            <input type="checkbox" name="menu-button" id="menu-button" />
-            <label for="menu-button" id="menu-wrapper">
-                <div class="line" id="line1"></div>
-                <div class="line" id="line2"></div>
-                <div class="line" id="line3"></div>
-            </label>
+    <!-- Architectural Background Grid -->
+    <div class="bg-grid-pattern" aria-hidden="true"></div>
 
-            <div class="menu-options" id="menu-bar">
-                <ul>
-                    <a href="/">
-                        <li>
-                            Home
-                            <div class="underline"></div>
-                        </li>
-                    </a>
+    <!-- Primary Navigation Bar -->
+    <header class="site-header" id="site-header">
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand" aria-label="Bishal Pal Home">
+                <span class="brand-monogram">BP</span>
+                <span class="brand-text">
+                    <span class="brand-name">Bishal Pal</span>
+                    <span class="brand-status">
+                        <span class="status-pulse" aria-hidden="true"></span>
+                        <span class="status-label">KIIT // CSE</span>
+                    </span>
+                </span>
+            </a>
 
-                    <a href="#about">
-                        <li>
-                            About
-                            <div class="underline"></div>
-                        </li>
-                    </a>
-
-                    <a href="#skills">
-                        <li>
-                            Skills
-                            <div class="underline"></div>
-                        </li>
-                    </a>
-
-                    <a href="#projects">
-                        <li>
-                            Projects
-                            <div class="underline"></div>
-                        </li>
-                    </a>
-
-                    <a href="#contact">
-                        <li>
-                            Contact
-                            <div class="underline"></div>
-                        </li>
-                    </a>
-
-                    <div class="switch">
-                        <label for="mode-toggle-1">
-                            <input id="mode-toggle-1" class="toggle-switch" type="checkbox" />
-                            <div class="sun-moon">
-                                <div class="dots"></div>
-                            </div>
-                            <div class="background">
-                                <div class="stars1"></div>
-                                <div class="stars2"></div>
-                            </div>
-                        </label>
-                    </div>
-
+            <!-- Desktop Navigation Links (Updated Order: 01 Overview, 02 About, 03 Education, 04 Skills, 05 Work, 06 Contact) -->
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link active"><span class="nav-num">01</span> Overview</a></li>
+                    <li><a href="#about" class="nav-link"><span class="nav-num">02</span> About</a></li>
+                    <li><a href="#education" class="nav-link"><span class="nav-num">03</span> Education</a></li>
+                    <li><a href="#skills" class="nav-link"><span class="nav-num">04</span> Skills</a></li>
+                    <li><a href="#projects" class="nav-link"><span class="nav-num">05</span> Work</a></li>
+                    <li><a href="#contact" class="nav-link"><span class="nav-num">06</span> Contact</a></li>
                 </ul>
-            </div>
-        </div>
+            </nav>
 
-        <div class="nav-options">
-            <ul>
-                <a href="/">
-                    <li>
-                        Home
-                        <div class="underline"></div>
-                    </li>
-                </a>
-
-                <a href="#about">
-                    <li>
-                        About
-                        <div class="underline"></div>
-                    </li>
-                </a>
-
-                <a href="#skills">
-                    <li>
-                        Skills
-                        <div class="underline"></div>
-                    </li>
-                </a>
-
-                <a href="#projects">
-                    <li>
-                        Projects
-                        <div class="underline"></div>
-                    </li>
-                </a>
-
-                <a href="#contact">
-                    <li>
-                        Contact
-                        <div class="underline"></div>
-                    </li>
-                </a>
-
-                <div class="switch">
-                    <label for="mode-toggle-2">
-                        <input id="mode-toggle-2" class="toggle-switch" type="checkbox" />
-                        <div class="sun-moon">
-                            <div class="dots"></div>
-                        </div>
-                        <div class="background">
-                            <div class="stars1"></div>
-                            <div class="stars2"></div>
-                        </div>
-                    </label>
-                </div>
-
-            </ul>
-        </div>
-    </nav>
-
-    <div class="profile-container">
-        <div class="profile-img" data-aos="zoom-in">
-            <img src="PXL_20241226_000502504.PORTRAIT.png" alt="profile-img" />
-        </div>
-
-        <div class="text" style="color: #555;" data-aos="fade-in" data-aos-delay="100">
-            <h1>&lt; Hello /&gt;</h1>
-            <h2>I'm <span>Bishal</span></h2>
-            <h3>Computer Science & Engineering Student</h3>
-
-            <div class="buttons">
-                <button id="linked-in">
-                    <a href="https://linkedin.com/in/bishal-pal-b101a2323" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-linkedin" viewBox="0 0 16 16">
-                            <path
-                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+            <!-- Actions: Theme Switcher & Mobile Menu Toggle -->
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle" type="button" aria-label="Toggle visual theme"
+                    title="Toggle theme">
+                    <span class="theme-icon icon-sun" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                         </svg>
-                        <div class="text">Linked In</div>
-                    </a>
+                    </span>
+                    <span class="theme-icon icon-moon" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </span>
                 </button>
 
-                <button id="github">
-                    <a href="https://github.com/Bishal0019" target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-github" viewBox="0 0 16 16">
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                        </svg>
-                        <div class="text">Github</div>
-                    </a>
+                <a href="#contact" class="nav-cta-btn">Connect</a>
+
+                <!-- Mobile Hamburger Button -->
+                <button class="mobile-menu-btn" id="mobile-toggle" type="button" aria-label="Toggle navigation drawer"
+                    aria-expanded="false" aria-controls="mobile-drawer">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
                 </button>
             </div>
         </div>
-    </div>
 
-    <section id="about" class="about-section">
-        <div class="header-section" data-aos="fade-up">
-            <h2>&lt; About Me /&gt;</h2>
-            <div class="devider"></div>
-        </div>
-
-        <p data-aos="fade-in">
-            Hello! I'm <strong>Bishal Pal</strong>, a passionate Computer Science & Engineering student currently
-            studying at <strong>KIIT - Kalinga Institute of Industrial Technology</strong>. I'm deeply interested in
-            crafting intuitive and responsive web experiences that blend creativity with functionality.
-        </p>
-
-        <p data-aos="fade-in">
-            I'm someone who's always curious — whether it's learning a new programming language, exploring a new
-            framework, or diving into how things work under the hood. I thrive on solving problems and building things
-            that matter.
-        </p>
-
-        <p data-aos="fade-in">
-            Outside the world of code, I'm an avid gamer, a cricket enthusiast, and a travel lover. I enjoy going on
-            rides, long drives, and capturing the world through my lens. Technology fascinates me, and I'm constantly
-            exploring new trends, tools, and innovations in the tech space.
-        </p>
-
-        <p data-aos="fade-in">
-            Whether it's developing user-friendly applications or just tinkering with code for fun, I'm always eager to
-            learn and grow. Thanks for stopping by!
-        </p>
-    </section>
-
-    <section id="skills" class="skill-section">
-        <div class="header-section" data-aos="fade-up">
-            <h2>&lt; Skills /&gt;</h2>
-            <div class="devider"></div>
-        </div>
-
-        <h3 data-aos="fade-in">Programming Languages</h3>
-        <ul class="programming-languages">
-            <li data-aos="fade-left" data-aos-delay="200">Python</li>
-            <li data-aos="fade-left" data-aos-delay="200">C</li>
-            <li data-aos="fade-left" data-aos-delay="200">C++</li>
-            <li data-aos="fade-left" data-aos-delay="200">JavaScript</li>
-            <li data-aos="fade-left" data-aos-delay="200">SQL</li>
-        </ul>
-
-        <h3 data-aos="fade-in">Frontend</h3>
-        <ul class="frontend">
-            <li data-aos="fade-left" data-aos-delay="200">HTML</li>
-            <li data-aos="fade-left" data-aos-delay="200">CSS</li>
-        </ul>
-
-        <h3 data-aos="fade-in">Frameworks</h3>
-        <ul class="framework">
-            <li data-aos="fade-left" data-aos-delay="200">React</li>
-            <li data-aos="fade-left" data-aos-delay="200">Vite.js</li>
-            <li data-aos="fade-left" data-aos-delay="200">Next.js</li>
-        </ul>
-
-        <h3 data-aos="fade-in">Tools & Libraries</h3>
-        <ul class="library">
-            <li data-aos="fade-left" data-aos-delay="200">Express.js</li>
-            <li data-aos="fade-left" data-aos-delay="200">Node.js</li>
-            <li data-aos="fade-left" data-aos-delay="200">Tailwind CSS</li>
-            <li data-aos="fade-left" data-aos-delay="200">Mongoose</li>
-            <li data-aos="fade-left" data-aos-delay="200">NextAuth.js</li>
-        </ul>
-
-        <h3 data-aos="fade-in">Databases</h3>
-        <ul class="databases">
-            <li data-aos="fade-left" data-aos-delay="200">MySQL</li>
-            <li data-aos="fade-left" data-aos-delay="200">MongoDB</li>
-        </ul>
-
-        <h3 data-aos="fade-in">Tools & Technologies</h3>
-        <ul class="tech">
-            <li data-aos="fade-left" data-aos-delay="200">Git</li>
-            <li data-aos="fade-left" data-aos-delay="200">GitHub</li>
-            <li data-aos="fade-left" data-aos-delay="200">VS Code</li>
-            <li data-aos="fade-left" data-aos-delay="200">Linux</li>
-        </ul>
-    </section>
-
-    <section class="projects-section" id="projects">
-        <div class="header-section" data-aos="fade-up">
-            <h2>&lt; Projects /&gt;</h2>
-            <div class="devider"></div>
-        </div>
-
-        <div class="project-wrapper">
-            <button class="toggle" data-aos="fade-in" data-aos-delay="100">
-                <h4>AB EnterPrise</h4>
-                <div class="project-container">
-                    <div class="screenshot">
-                        <img src="Screenshot (81).png" alt="project-screenshot" />
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+            <div class="drawer-inner">
+                <div class="drawer-header">
+                    <span class="drawer-title">// NAVIGATION</span>
+                    <span class="drawer-meta">BISHAL PAL ARCHIVE</span>
+                </div>
+                <ul class="drawer-nav">
+                    <li><a href="#hero" class="drawer-link"><span class="drawer-num">01</span> Overview</a></li>
+                    <li><a href="#about" class="drawer-link"><span class="drawer-num">02</span> About</a></li>
+                    <li><a href="#education" class="drawer-link"><span class="drawer-num">03</span> Education</a></li>
+                    <li><a href="#skills" class="drawer-link"><span class="drawer-num">04</span> Skills &amp; Tech</a></li>
+                    <li><a href="#projects" class="drawer-link"><span class="drawer-num">05</span> Selected Work</a></li>
+                    <li><a href="#contact" class="drawer-link"><span class="drawer-num">06</span> Contact</a></li>
+                </ul>
+                <div class="drawer-footer">
+                    <div class="drawer-contact-info">
+                        <span class="drawer-label">DIRECT INQUIRIES</span>
+                        <a href="mailto:bishalpal0019@gmail.com" class="drawer-email">bishalpal0019@gmail.com</a>
                     </div>
-                    <p>AB Enterprise is a sleek and responsive business website designed for a real-world company
-                        profile. Built with modern web technologies, the project showcases essential features that a
-                        professional enterprise site needs — including a well-structured homepage, service highlights, a
-                        team introduction, and a contact form.</p>
-
-                    <p>The project focuses on clean UI/UX design, intuitive navigation, and responsive layout to ensure
-                        seamless experience across devices.</p>
-
-                    <div class="navigation-buttons">
-                        <a href="https://ab-enterprise.vercel.app/" target="_blank">🔗 Live Demo</a>
-                        <a href="https://github.com/Bishal0019/AB-Enterprise" target="_blank">💻 GitHub</a>
+                    <div class="drawer-socials">
+                        <a href="https://linkedin.com/in/bishal-pal-b101a2323" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn">LinkedIn</a>
+                        <span class="divider">/</span>
+                        <a href="https://github.com/Bishal0019" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub">GitHub</a>
+                        <span class="divider">/</span>
+                        <a href="https://www.instagram.com/bishal_.19._/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram">Instagram</a>
                     </div>
                 </div>
-            </button>
-
-            <button class="toggle" data-aos="fade-in" data-aos-delay="100">
-                <h4>ToDo App</h4>
-                <div class="project-container">
-                    <div class="screenshot">
-                        <img src="Screenshot (82).png" alt="project-screenshot" />
-                    </div>
-                    <p>ToDo App is a minimalist, responsive task manager built with React. It allows users to add,
-                        complete, and delete tasks efficiently through an intuitive and clean interface. The app offers
-                        real-time updates, interactive checkbox functionality, and local state management to help users
-                        stay organized and productive.</p>
-
-                    <p>It serves as a perfect starter project for exploring React fundamentals like component structure,
-                        hooks (like <strong>useState</strong> and <strong>useEffect</strong>), conditional rendering,
-                        and state-driven UI updates.</p>
-
-                    <div class="navigation-buttons">
-                        <a href="https://react-app-theta-five.vercel.app/" target="_blank">🔗 Live Demo</a>
-                        <a href="https://github.com/Bishal0019/react-app" target="_blank">💻 GitHub</a>
-                    </div>
-                </div>
-            </button>
-
-            <button class="toggle" data-aos="fade-in" data-aos-delay="100">
-                <h4>GraiNova</h4>
-                <div class="project-container">
-                    <div class="screenshot">
-                        <img src="grainova-ss.png" alt="project-screenshot" />
-                    </div>
-                    <p>A web app that supports Indian farmers with real-time guidance: choose state, district & crop to
-                        get tailored recommendations; upload soil reports or images for automated analysis; speech-to-text
-                        and multilingual text-to-speech for voice-enabled interaction. Built with Next.js, Google Gemini &
-                        Google Cloud APIs.</p>
-
-                    <div class="navigation-buttons">
-                        <a href="https://grainova-web-app.vercel.app/" target="_blank">🔗 Live Demo</a>
-                        <a href="https://github.com/Bishal0019/GraiNovaWebApp" target="_blank">💻 GitHub</a>
-                    </div>
-                </div>
-            </button>
-
-            <button class="toggle" data-aos="fade-in" data-aos-delay="100">
-                <h4>ExpenseTracker</h4>
-                <div class="project-container">
-                    <div class="screenshot">
-                        <img src="expensetracker-ss.png" alt="project-screenshot" />
-                    </div>
-                    <p>A sleek, mobile-first ExpenseTracker web app to manage monthly spending with a starting balance,
-                        income/expense entries, and detailed financial history. Built with Next.js for the frontend and API
-                        routes, MongoDB + Mongoose for secure cloud data storage, and Clerk authentication for private user
-                        accounts.</p>
-
-                    <div class="navigation-buttons">
-                        <a href="https://bishal-expense-tracker.vercel.app/" target="_blank">🔗 Live Demo</a>
-                        <a href="https://github.com/Bishal0019/ExpenseTracker" target="_blank">💻 GitHub</a>
-                    </div>
-                </div>
-            </button>
+            </div>
         </div>
-    </section>
+    </header>
 
-    <section id="contact" class="contact-section">
-        <div class="header-section" data-aos="fade-up">
-            <h2>&lt; Contact /&gt;</h2>
-            <div class="devider"></div>
-        </div>
+    <main id="main-content">
+        <!-- =========================================================
+             01. HERO SECTION: High-Impact Editorial Layout
+             ========================================================= -->
+        <section id="hero" class="hero-section" aria-label="Introduction">
+            <div class="site-container hero-container">
+                <!-- Technical Top Kicker Bar -->
+                <div class="hero-kicker-bar reveal-item">
+                    <div class="kicker-item">
+                        <span class="kicker-tag">[ 01 // ARCHIVE ]</span>
+                        <span class="kicker-text">PORTFOLIO &amp; LAB</span>
+                    </div>
+                    <div class="kicker-item kicker-geo">
+                        <span class="kicker-label">LOC //</span>
+                        <span class="kicker-val">BHUBANESWAR, INDIA</span>
+                    </div>
+                    <div class="kicker-item kicker-status">
+                        <span class="status-indicator-live" aria-hidden="true"></span>
+                        <span class="kicker-val">OPEN FOR INTERNSHIPS &amp; PROJECTS</span>
+                    </div>
+                </div>
 
-        <ul>
-            <li data-aos="fade-in">
-                <a href="mailto:bishalpal0019@gmail.com" target="_blank" class="mail">
-                    <img src="mail_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="mail-logo" />
-                    <span class="text">Email: bishalpal0019@gmail.com</span>
-                </a>
-            </li>
+                <!-- Main Asymmetric Hero Grid -->
+                <div class="hero-main-grid">
+                    <!-- Left Editorial Narrative Column -->
+                    <div class="hero-editorial-col">
+                        <div class="hero-discipline-tag reveal-item">
+                            <span class="tag-accent">// FULL-STACK DEVELOPMENT &amp; APPLIED AI</span>
+                        </div>
 
-            <li data-aos="fade-in">
-                <a href="https://www.instagram.com/i_m_bishal19/" class="insta">
-                    <img src="instagram.svg" alt="insta-logo" />
-                    <span class="text">Instagram</span>
-                </a>
-            </li>
+                        <h1 class="hero-headline reveal-item">
+                            <span class="hero-headline-row">
+                                <span class="name-display">Bishal</span>
+                                <span class="headline-mark" aria-hidden="true">/</span>
+                            </span>
+                            <span class="hero-headline-row">
+                                <span class="name-display surname">Pal</span>
+                            </span>
+                        </h1>
 
-            <li data-aos="fade-in">
-                <a href="https://linkedin.com/in/bishal-pal-b101a2323" class="linkedin">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-linkedin"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-                    </svg>
-                    <span class="text">Linked In</span>
-                </a>
-            </li>
+                        <div class="hero-designation-card reveal-item">
+                            <div class="designation-badge">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                                </svg>
+                                <span>Computer Science &amp; Engineering Student</span>
+                            </div>
+                            <p class="institution-meta">Kalinga Institute of Industrial Technology (KIIT)</p>
+                        </div>
 
-            <li data-aos="fade-in">
-                <a href="https://github.com/Bishal0019" class="github">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-github"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                    </svg>
-                    <span class="text">GitHub</span>
-                </a>
-            </li>
-        </ul>
-    </section>
+                        <p class="hero-synopsis reveal-item">
+                            Engineering modern, high-performance web applications and applied intelligence systems.
+                            Combining architectural discipline with refined design craft to build digital products that
+                            solve real problems.
+                        </p>
 
-    <footer>
-        <div class="text">&copy;2025, All Rights Reserved</div>
-        <div class="sign">
-            <span>This Website is Developed by: </span>
-            <img src="pixel_studio_20250608_06370682-removebg-preview (1).png" alt="web-signature" width="60" />
+                        <!-- Action Group -->
+                        <div class="hero-actions-group reveal-item">
+                            <a href="#projects" class="btn btn-primary">
+                                <span>Explore Selected Work</span>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </a>
+
+                            <a href="#contact" class="btn btn-secondary">
+                                <span>Initiate Contact</span>
+                            </a>
+
+                            <!-- Social Direct Links -->
+                            <div class="hero-social-links" aria-label="Social Profiles">
+                                <a href="https://github.com/Bishal0019" target="_blank" rel="noopener noreferrer"
+                                    class="social-icon-btn" title="GitHub Repository" aria-label="GitHub">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                </a>
+
+                                <a href="https://linkedin.com/in/bishal-pal-b101a2323" target="_blank"
+                                    rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn Profile"
+                                    aria-label="LinkedIn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Portrait & Technical Viewfinder Column -->
+                    <div class="hero-portrait-col reveal-item">
+                        <div class="viewfinder-frame">
+                            <!-- Frame Technical Overlays -->
+                            <div class="viewfinder-corner top-left" aria-hidden="true">+</div>
+                            <div class="viewfinder-corner top-right" aria-hidden="true">+</div>
+                            <div class="viewfinder-corner bottom-left" aria-hidden="true">+</div>
+                            <div class="viewfinder-corner bottom-right" aria-hidden="true">+</div>
+
+                            <div class="viewfinder-meta-top">
+                                <span class="mono-label">REC_2025 // KIIT</span>
+                                <span class="mono-label">DEV_ID: BP-0019</span>
+                            </div>
+
+                            <!-- Real Portrait Image -->
+                            <div class="portrait-image-wrapper">
+                                <img src="PXL_20241226_000502504.PORTRAIT.png" alt="Bishal Pal portrait"
+                                    class="portrait-img" width="650" height="782" loading="eager" />
+                                <div class="portrait-film-grain" aria-hidden="true"></div>
+                            </div>
+
+                            <div class="viewfinder-meta-bottom">
+                                <div class="viewfinder-stat">
+                                    <span class="stat-key">SYS //</span>
+                                    <span class="stat-val">FULL-STACK</span>
+                                </div>
+                                <div class="viewfinder-stat">
+                                    <span class="stat-key">ENV //</span>
+                                    <span class="stat-val">NEXT.JS + AI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Quantitative Strip (Balanced 3-Column Layout without artificial count) -->
+                <div class="hero-specs-strip reveal-item">
+                    <div class="spec-cell">
+                        <span class="spec-number">KIIT</span>
+                        <div class="spec-desc">
+                            <span class="spec-title">Computer Science &amp; Eng</span>
+                            <span class="spec-sub">Bachelor of Technology</span>
+                        </div>
+                    </div>
+
+                    <div class="spec-cell">
+                        <span class="spec-number">2026</span>
+                        <div class="spec-desc">
+                            <span class="spec-title">Core Engineering Stack</span>
+                            <span class="spec-sub">React &bull; Next.js &bull; Node &bull; Cloud AI</span>
+                        </div>
+                    </div>
+
+                    <div class="spec-cell">
+                        <span class="spec-number">100%</span>
+                        <div class="spec-desc">
+                            <span class="spec-title">Curiosity Driven</span>
+                            <span class="spec-sub">Continuous Learning &amp; Rigor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             02. ABOUT SECTION: Editorial Split Layout
+             ========================================================= -->
+        <section id="about" class="editorial-section about-section" aria-label="About Bishal Pal">
+            <div class="site-container">
+                <div class="section-header reveal-item">
+                    <div class="section-tag-group">
+                        <span class="section-index">[ 02 ]</span>
+                        <span class="section-kicker">PERSONAL IDENTITY &amp; BACKGROUND</span>
+                    </div>
+                    <h2 class="section-headline">Engineering Through Curiosity, Craft &amp; Purpose</h2>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Left Editorial Specs & Focus Column -->
+                    <div class="about-aside reveal-item">
+                        <div class="aside-statement-card">
+                            <span class="statement-prefix">// CORE PHILOSOPHY</span>
+                            <blockquote class="statement-quote">
+                                &ldquo;Software engineering is where systematic rigor meets creative curiosity. I dive
+                                under the hood to build tools that genuinely empower users.&rdquo;
+                            </blockquote>
+                        </div>
+
+                        <!-- Structured Specs Ledger -->
+                        <div class="about-specs-ledger">
+                            <div class="ledger-row">
+                                <span class="ledger-label">Current Academic Base</span>
+                                <span class="ledger-value">KIIT University</span>
+                            </div>
+                            <div class="ledger-row">
+                                <span class="ledger-label">Discipline</span>
+                                <span class="ledger-value">B.Tech, Computer Science &amp; Eng</span>
+                            </div>
+                            <div class="ledger-row">
+                                <span class="ledger-label">Primary Domains</span>
+                                <span class="ledger-value">Full-Stack Architecture &amp; Cloud AI</span>
+                            </div>
+                            <div class="ledger-row">
+                                <span class="ledger-label">Interests Beyond Code</span>
+                                <span class="ledger-value">Motorcycling, Photography, Cricket, Gaming</span>
+                            </div>
+                        </div>
+
+                        <!-- Status Card -->
+                        <div class="about-status-box">
+                            <div class="status-box-header">
+                                <span class="status-pulse-sm" aria-hidden="true"></span>
+                                <span class="status-box-title">CURRENT STATUS</span>
+                            </div>
+                            <p class="status-box-desc">
+                                Open to Summer/Fall 2026 internships, engineering fellowships, and ambitious product
+                                collaborations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Narrative Flow Column -->
+                    <div class="about-content reveal-item">
+                        <div class="editorial-lead-paragraph">
+                            <p>
+                                Hello! I'm <strong>Bishal Pal</strong>, a Computer Science &amp; Engineering student
+                                currently studying at <strong>KIIT &mdash; Kalinga Institute of Industrial
+                                    Technology</strong>. I build intuitive, performant, and responsive web experiences
+                                that balance visual clarity with robust software architecture.
+                            </p>
+                        </div>
+
+                        <div class="editorial-prose">
+                            <p>
+                                I am someone driven by genuine curiosity &mdash; whether that means exploring an
+                                unfamiliar programming language, dissecting a new frontend framework, or diving deep
+                                into how runtime engines and APIs work under the hood. For me, programming isn't just
+                                about shipping lines of code; it is about deconstructing complex challenges and crafting
+                                digital systems that solve meaningful problems.
+                            </p>
+                            <p>
+                                Outside the terminal and IDE, my life is fueled by adventure and creative observation.
+                                I'm an avid gamer, a passionate cricket enthusiast, and a travel lover who enjoys going
+                                on long motorcycle rides, highway drives, and capturing the world through my camera lens.
+                            </p>
+                            <p>
+                                Technology continues to move at an exhilarating pace, and I actively explore emerging
+                                developments across web infrastructure, generative AI integration, and user interface
+                                craftsmanship. Whether developing full-scale software platforms or tinkering with
+                                creative code experiments, I bring dedication and hunger to constantly learn and grow.
+                            </p>
+                        </div>
+
+                        <!-- Highlights Ticker / What I Value -->
+                        <div class="about-values-grid">
+                            <div class="value-item">
+                                <span class="value-index">01</span>
+                                <h3 class="value-title">Under-the-Hood Rigor</h3>
+                                <p class="value-text">Understanding memory, asynchronous lifecycles, and underlying
+                                    runtimes rather than relying on surface abstractions.</p>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-index">02</span>
+                                <h3 class="value-title">User Ergonomics</h3>
+                                <p class="value-text">Designing interfaces with thoughtful typography, crisp visual
+                                    hierarchy, and responsive feedback across all viewports.</p>
+                            </div>
+                            <div class="value-item">
+                                <span class="value-index">03</span>
+                                <h3 class="value-title">Applied Intelligence</h3>
+                                <p class="value-text">Harnessing LLMs and modern multimodal APIs to build real-world
+                                    solutions, from agrarian diagnostics to voice assistance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             03. EDUCATION SECTION: Refined Chronological Academic Timeline
+             ========================================================= -->
+        <section id="education" class="editorial-section education-section" aria-label="Academic Education Journey">
+            <div class="site-container">
+                <div class="section-header reveal-item">
+                    <div class="section-tag-group">
+                        <span class="section-index">[ 03 ]</span>
+                        <span class="section-kicker">ACADEMIC PROFILE &amp; MILESTONES</span>
+                    </div>
+                    <div class="section-headline-split">
+                        <h2 class="section-headline">Academic Trajectory &amp; Foundation</h2>
+                        <p class="section-subtext">
+                            Chronological educational journey from secondary foundations to advanced undergraduate
+                            engineering in Computer Science.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Vertical Academic Timeline -->
+                <div class="education-timeline">
+                    <!-- Stage 01: Secondary Education (Class X) -->
+                    <div class="education-item reveal-item" data-stage="secondary">
+                        <div class="education-node" aria-hidden="true">
+                            <span>01</span>
+                        </div>
+                        <div class="education-card">
+                            <div class="education-card-header">
+                                <div class="education-institution-group">
+                                    <span class="education-stage-tag">// SECONDARY EDUCATION</span>
+                                    <h3 class="education-institution">Arambagh Vivekananda Academy</h3>
+                                </div>
+                                <div class="education-duration-badge">
+                                    <span>Completed 2022</span>
+                                </div>
+                            </div>
+                            <div class="education-card-body">
+                                <div class="education-details">
+                                    <span class="education-qualification">Secondary Education (Class X)</span>
+                                    <span class="education-submeta">Foundational Sciences, Mathematics &amp; Humanities</span>
+                                </div>
+                                <div class="education-result-box">
+                                    <span class="result-label">Academic Result</span>
+                                    <span class="result-val">90.2%</span>
+                                    <span class="result-context">Board Examination</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stage 02: Higher Secondary Education (Class XII) -->
+                    <div class="education-item reveal-item" data-stage="higher-secondary">
+                        <div class="education-node" aria-hidden="true">
+                            <span>02</span>
+                        </div>
+                        <div class="education-card">
+                            <div class="education-card-header">
+                                <div class="education-institution-group">
+                                    <span class="education-stage-tag">// HIGHER SECONDARY EDUCATION</span>
+                                    <h3 class="education-institution">Arambagh Vivekananda Academy</h3>
+                                </div>
+                                <div class="education-duration-badge">
+                                    <span>Completed 2024</span>
+                                </div>
+                            </div>
+                            <div class="education-card-body">
+                                <div class="education-details">
+                                    <span class="education-qualification">Higher Secondary Education (Class XII)</span>
+                                    <span class="education-submeta">Physics, Chemistry, Mathematics &amp; Computer Science</span>
+                                </div>
+                                <div class="education-result-box">
+                                    <span class="result-label">Academic Result</span>
+                                    <span class="result-val">85%</span>
+                                    <span class="result-context">Senior Secondary Board</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stage 03: Undergraduate Education (KIIT B.Tech CSE) — Given Higher Prominence -->
+                    <div class="education-item undergrad reveal-item" data-stage="undergraduate">
+                        <div class="education-node" aria-hidden="true">
+                            <span>03</span>
+                        </div>
+                        <div class="education-card">
+                            <div class="education-card-header">
+                                <div class="education-institution-group">
+                                    <div class="undergrad-meta-bar">
+                                        <span class="education-stage-tag">// CURRENT UNDERGRADUATE DEGREE</span>
+                                        <span class="active-pulse-badge">
+                                            <span class="pulse-dot" aria-hidden="true"></span>
+                                            <span>Active Scholar</span>
+                                        </span>
+                                    </div>
+                                    <h3 class="education-institution">KIIT &mdash; Kalinga Institute of Industrial Technology</h3>
+                                </div>
+                                <div class="education-duration-badge highlight-badge">
+                                    <span>2024 &ndash; Present &bull; Expected Graduation: 2028</span>
+                                </div>
+                            </div>
+                            <div class="education-card-body">
+                                <div class="education-details">
+                                    <span class="education-qualification">Bachelor of Technology (B.Tech)</span>
+                                    <span class="education-department">Department of Computer Science and Engineering (CSE)</span>
+                                    <span class="education-submeta">Data Structures, Algorithms, Computer Architecture &amp; Modern Systems</span>
+                                </div>
+                                <div class="education-result-box highlighted-score">
+                                    <span class="result-label">Current Academic Standing</span>
+                                    <span class="result-val">8.90 <span class="scale-text">/ 10.00</span></span>
+                                    <span class="result-context">Cumulative CGPA (Up to 4th Semester)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             04. SKILLS SECTION: Architectural Competency Matrix
+             ========================================================= -->
+        <section id="skills" class="editorial-section skills-section" aria-label="Technical Skills">
+            <div class="site-container">
+                <div class="section-header reveal-item">
+                    <div class="section-tag-group">
+                        <span class="section-index">[ 04 ]</span>
+                        <span class="section-kicker">TECHNICAL COMPETENCY &amp; TOOLING</span>
+                    </div>
+                    <div class="section-headline-split">
+                        <h2 class="section-headline">Languages, Architectures &amp; Engineering Stack</h2>
+                        <p class="section-subtext">
+                            Structured across system programming, full-stack web platforms, distributed databases,
+                            authentication, and cloud intelligence pipelines.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Skills Category Navigation Tabs -->
+                <div class="skills-filter-bar reveal-item" role="tablist" aria-label="Skills filter">
+                    <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All
+                        Disciplines</button>
+                    <button class="filter-tab" data-filter="languages" role="tab"
+                        aria-selected="false">Languages</button>
+                    <button class="filter-tab" data-filter="frontend" role="tab" aria-selected="false">Frontend</button>
+                    <button class="filter-tab" data-filter="backend" role="tab" aria-selected="false">Backend &amp; Auth</button>
+                    <button class="filter-tab" data-filter="databases" role="tab"
+                        aria-selected="false">Databases</button>
+                    <button class="filter-tab" data-filter="ai-cloud" role="tab" aria-selected="false">AI &amp;
+                        Cloud</button>
+                    <button class="filter-tab" data-filter="tools" role="tab" aria-selected="false">Tools &amp;
+                        Platforms</button>
+                </div>
+
+                <!-- Skills Categorized Architectural Grid -->
+                <div class="skills-matrix-grid">
+                    <!-- Category 01: Programming Languages -->
+                    <div class="skill-category-card reveal-item" data-category="languages">
+                        <div class="card-header-clean">
+                            <div class="cat-meta">
+                                <span class="cat-num">01</span>
+                                <span class="cat-tag">// FOUNDATIONS</span>
+                            </div>
+                            <h3 class="cat-title">Programming Languages</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z" />
+                                    </svg>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-role">AI Pipelines &amp; Scripting</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">&lt;/&gt;</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">C</span>
+                                    <span class="skill-role">Memory, Pointers &amp; Low-Level</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">++</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">C++</span>
+                                    <span class="skill-role">Data Structures &amp; Algorithms</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">JS</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript (ES6+)</span>
+                                    <span class="skill-role">Async Engine &amp; Full-Stack</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">SQL</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">SQL</span>
+                                    <span class="skill-role">Relational Queries &amp; Schemas</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 02: Frontend Architecture -->
+                    <div class="skill-category-card reveal-item" data-category="frontend">
+                        <div class="card-header-clean">
+                            <div class="cat-meta">
+                                <span class="cat-num">02</span>
+                                <span class="cat-tag">// INTERFACE &amp; CLIENT</span>
+                            </div>
+                            <h3 class="cat-title">Frontend Architecture</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <ellipse cx="12" cy="12" rx="10" ry="4"></ellipse>
+                                        <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"></ellipse>
+                                        <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)">
+                                        </ellipse>
+                                        <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
+                                    </svg>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">React</span>
+                                    <span class="skill-role">Component Architecture &amp; Hooks</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">N</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Next.js</span>
+                                    <span class="skill-role">App Router, SSR &amp; API Routes</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">⚡</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Vite.js</span>
+                                    <span class="skill-role">Modern Build &amp; Dev Tooling</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">TW</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Tailwind CSS</span>
+                                    <span class="skill-role">Design Tokens &amp; Utility Layouts</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">H5</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5 &amp; CSS3</span>
+                                    <span class="skill-role">Semantic Web, Grid &amp; Animations</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 03: Backend Development & Authentication -->
+                    <div class="skill-category-card reveal-item" data-category="backend">
+                        <div class="card-header-clean">
+                            <div class="cat-meta">
+                                <span class="cat-num">03</span>
+                                <span class="cat-tag">// SERVER &amp; AUTHENTICATION</span>
+                            </div>
+                            <h3 class="cat-title">Backend &amp; Auth</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">Node</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Node.js</span>
+                                    <span class="skill-role">Asynchronous Event-Driven Runtime</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">Ex</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Express.js</span>
+                                    <span class="skill-role">REST APIs &amp; Middleware Pipelines</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">Mg</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Mongoose</span>
+                                    <span class="skill-role">ODM &amp; Data Schema Validation</span>
+                                </div>
+                            </li>
+                            <!-- Clerk (Added cleanly as requested) -->
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+                                    </svg>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Clerk</span>
+                                    <span class="skill-role">Authentication and User Management</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">Auth</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">NextAuth.js</span>
+                                    <span class="skill-role">Session Management &amp; OAuth Flow</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 04: Databases & Storage -->
+                    <div class="skill-category-card reveal-item" data-category="databases">
+                        <div class="card-header-clean">
+                            <div class="cat-meta">
+                                <span class="cat-num">04</span>
+                                <span class="cat-tag">// PERSISTENCE &amp; DATA</span>
+                            </div>
+                            <h3 class="cat-title">Databases</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                    </svg>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">MongoDB</span>
+                                    <span class="skill-role">Document NoSQL &amp; Cloud Atlas</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                        <path d="M21 9c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                        <path d="M21 15c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                                    </svg>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">MySQL</span>
+                                    <span class="skill-role">Relational Schema &amp; Transactions</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 05: AI / Machine Learning & Cloud -->
+                    <div class="skill-category-card reveal-item" data-category="ai-cloud">
+                        <div class="card-header-clean">
+                            <div class="cat-meta">
+                                <span class="cat-num">05</span>
+                                <span class="cat-tag">// APPLIED INTELLIGENCE</span>
+                            </div>
+                            <h3 class="cat-title">AI / Machine Learning</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                    </svg>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Google Gemini API</span>
+                                    <span class="skill-role">Multimodal Vision &amp; LLM Context</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                                    </svg>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Google Cloud APIs</span>
+                                    <span class="skill-role">Cloud Services &amp; Developer APIs</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                                    </svg>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Speech-to-Text &amp; TTS</span>
+                                    <span class="skill-role">Multilingual Voice Synthesis</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Category 06: Tools and Platforms (With Antigravity Added) -->
+                    <div class="skill-category-card reveal-item" data-category="tools">
+                        <div class="card-header-clean">
+                            <div class="cat-meta">
+                                <span class="cat-num">06</span>
+                                <span class="cat-tag">// ENVIRONMENT &amp; DEVOPS</span>
+                            </div>
+                            <h3 class="cat-title">Tools and Platforms</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <!-- Antigravity (Added cleanly as requested) -->
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <circle cx="12" cy="12" r="8" stroke-dasharray="2 3"></circle>
+                                        <line x1="12" y1="2" x2="12" y2="4"></line>
+                                        <line x1="12" y1="20" x2="12" y2="22"></line>
+                                        <line x1="2" y1="12" x2="4" y2="12"></line>
+                                        <line x1="20" y1="12" x2="22" y2="12"></line>
+                                    </svg>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Antigravity</span>
+                                    <span class="skill-role">AI-powered Development Environment</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <line x1="6" y1="3" x2="6" y2="15"></line>
+                                        <circle cx="18" cy="6" r="3"></circle>
+                                        <circle cx="6" cy="18" r="3"></circle>
+                                        <path d="M18 9a9 9 0 0 1-9 9"></path>
+                                    </svg>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Git &amp; GitHub</span>
+                                    <span class="skill-role">Version Control &amp; Collaboration</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">VSC</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">VS Code</span>
+                                    <span class="skill-role">IDE, Debugging &amp; Workspaces</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">TUX</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Linux</span>
+                                    <span class="skill-role">Terminal, Shell &amp; POSIX Systems</span>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-icon-wrap" aria-hidden="true">
+                                    <span class="code-symbol">&#9650;</span>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Vercel</span>
+                                    <span class="skill-role">Edge Deployment &amp; CI/CD Pipelines</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             05. PROJECTS SECTION: Large-Format Editorial Showcases
+             ========================================================= -->
+        <section id="projects" class="editorial-section projects-section" aria-label="Selected Engineering Work">
+            <div class="site-container">
+                <div class="section-header reveal-item">
+                    <div class="section-tag-group">
+                        <span class="section-index">[ 05 ]</span>
+                        <span class="section-kicker">SELECTED ENGINEERING WORKS</span>
+                    </div>
+                    <div class="section-headline-split">
+                        <h2 class="section-headline">Case Studies, Deployed Platforms &amp; Intelligent Systems</h2>
+                        <p class="section-subtext">
+                            Real-world production applications engineered with high technical fidelity, robust voice
+                            interfaces, and modern web architectures.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="projects-display-container">
+                    <!-- =============================================
+                         PROJECT 01: GraiNova (Flagship Featured Spread)
+                         ============================================= -->
+                    <article class="project-showcase-card flagship-card reveal-item"
+                        data-project="grainova">
+                        <div class="project-grid-split">
+                            <!-- Left: Interactive Browser Mockup -->
+                            <div class="project-media-col">
+                                <div class="browser-window-frame">
+                                    <div class="browser-chrome-bar">
+                                        <div class="chrome-dots">
+                                            <span class="dot dot-red"></span>
+                                            <span class="dot dot-yellow"></span>
+                                            <span class="dot dot-green"></span>
+                                        </div>
+                                        <div class="chrome-address">
+                                            <span class="lock-icon">&#128274;</span>
+                                            <span class="url-text">grainova-web-app.vercel.app</span>
+                                        </div>
+                                        <div class="chrome-badge">FLAGSHIP SYSTEM</div>
+                                    </div>
+                                    <div class="browser-viewport" tabindex="0" role="button"
+                                        aria-label="View enlarged screenshot of GraiNova project">
+                                        <img src="grainova-ss.png"
+                                            alt="GraiNova Digital Farming Assistant application screenshot showing real-time advisory dashboard"
+                                            class="project-screenshot-img" width="1894" height="988" loading="lazy" />
+                                        <div class="viewport-hover-overlay">
+                                            <span class="expand-pill">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <circle cx="11" cy="11" r="8"></circle>
+                                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                                </svg>
+                                                Click to Inspect Full Preview
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Editorial Details -->
+                            <div class="project-narrative-col">
+                                <div class="project-meta-kicker">
+                                    <span class="project-num">01 // APPLIED AI &amp; AGRITECH</span>
+                                    <span class="project-status">PRODUCTION LIVE</span>
+                                </div>
+
+                                <h3 class="project-title">
+                                    <a href="https://grainova-web-app.vercel.app/" target="_blank"
+                                        rel="noopener noreferrer" class="project-title-link">
+                                        GraiNova: Digital Farming Assistant
+                                        <svg class="title-external-icon" width="18" height="18" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </a>
+                                </h3>
+
+                                <p class="project-description">
+                                    A full-stack agricultural assistant application engineered to support Indian
+                                    farmers with real-time, context-aware guidance. Users select their specific state,
+                                    district, and target crops to receive tailored farming recommendations, upload soil
+                                    test reports and foliage imagery for automated AI diagnostics, and interact hands-free
+                                    through integrated speech-to-text and multilingual text-to-speech engines.
+                                </p>
+
+                                <div class="project-highlights">
+                                    <div class="highlight-item">
+                                        <span class="highlight-bullet">//</span>
+                                        <span>Automated soil report and crop disease diagnosis using multimodal vision
+                                            analysis</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <span class="highlight-bullet">//</span>
+                                        <span>Multilingual voice-driven interface enabling accessibility for regional
+                                            farming communities</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <span class="highlight-bullet">//</span>
+                                        <span>Location-calibrated agro-climatic crop advisory algorithms</span>
+                                    </div>
+                                </div>
+
+                                <div class="project-tech-stack" aria-label="Technologies used">
+                                    <span class="tech-tag">Next.js</span>
+                                    <span class="tech-tag">Google Gemini API</span>
+                                    <span class="tech-tag">Google Cloud APIs</span>
+                                    <span class="tech-tag">Multilingual STT / TTS</span>
+                                    <span class="tech-tag">Tailwind CSS</span>
+                                </div>
+
+                                <div class="project-action-links">
+                                    <a href="https://grainova-web-app.vercel.app/" target="_blank"
+                                        rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                        <span>Launch Live System</span>
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </a>
+
+                                    <a href="https://github.com/Bishal0019/GraiNovaWebApp" target="_blank"
+                                        rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                        </svg>
+                                        <span>View Source</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- =============================================
+                         PROJECT 02: AutoCare AI (Voice-Based Vehicle Service Platform)
+                         ============================================= -->
+                    <article class="project-showcase-card reverse-layout reveal-item"
+                        data-project="autocareai">
+                        <div class="project-grid-split">
+                            <!-- Left: Editorial Details -->
+                            <div class="project-narrative-col">
+                                <div class="project-meta-kicker">
+                                    <span class="project-num">02 // CONVERSATIONAL AI &amp; AUTOMATION</span>
+                                    <span class="project-status">PRODUCTION LIVE</span>
+                                </div>
+
+                                <h3 class="project-title">
+                                    <a href="https://autocareai-services.vercel.app/" target="_blank"
+                                        rel="noopener noreferrer" class="project-title-link">
+                                        AutoCare AI
+                                        <svg class="title-external-icon" width="18" height="18" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </a>
+                                </h3>
+
+                                <p class="project-description">
+                                    An AI-powered voice-based vehicle service booking platform that allows customers to
+                                    interact with an AI assistant, schedule vehicle services, manage bookings and handle
+                                    rescheduling through an intuitive interface.
+                                </p>
+
+                                <div class="project-highlights">
+                                    <div class="highlight-item">
+                                        <span class="highlight-bullet">//</span>
+                                        <span>Interactive AI voice assistant enabling hands-free, conversational service scheduling</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <span class="highlight-bullet">//</span>
+                                        <span>End-to-end booking lifecycle management with seamless modification and rescheduling</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <span class="highlight-bullet">//</span>
+                                        <span>Ergonomic service dashboard designed for frictionless customer coordination</span>
+                                    </div>
+                                </div>
+
+                                <div class="project-tech-stack" aria-label="Technologies used">
+                                    <span class="tech-tag">AI Voice Agent</span>
+                                    <span class="tech-tag">Next.js</span>
+                                    <span class="tech-tag">Conversational AI</span>
+                                    <span class="tech-tag">Vehicle Booking Engine</span>
+                                    <span class="tech-tag">Tailwind CSS</span>
+                                </div>
+
+                                <div class="project-action-links">
+                                    <a href="https://autocareai-services.vercel.app/" target="_blank"
+                                        rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                        <span>Launch Live Platform</span>
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </a>
+
+                                    <a href="https://autocareai-services.vercel.app/" target="_blank"
+                                        rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                                        <span>Explore Service Portal</span>
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Right: Interactive Browser Mockup with AutoCare-ss.png -->
+                            <div class="project-media-col">
+                                <div class="browser-window-frame">
+                                    <div class="browser-chrome-bar">
+                                        <div class="chrome-dots">
+                                            <span class="dot dot-red"></span>
+                                            <span class="dot dot-yellow"></span>
+                                            <span class="dot dot-green"></span>
+                                        </div>
+                                        <div class="chrome-address">
+                                            <span class="lock-icon">&#128274;</span>
+                                            <span class="url-text">autocareai-services.vercel.app</span>
+                                        </div>
+                                        <div class="chrome-badge">VOICE AI</div>
+                                    </div>
+                                    <div class="browser-viewport" tabindex="0" role="button"
+                                        aria-label="View enlarged screenshot of AutoCare AI project">
+                                        <img src="AutoCare-ss.png"
+                                            alt="AutoCare AI voice-based vehicle service booking platform application interface"
+                                            class="project-screenshot-img" width="1918" height="988" loading="lazy" />
+                                        <div class="viewport-hover-overlay">
+                                            <span class="expand-pill">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <circle cx="11" cy="11" r="8"></circle>
+                                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                                </svg>
+                                                Click to Inspect Full Preview
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- =============================================
+                         PROJECT 03: ExpenseTracker (Cloud & Authentication)
+                         ============================================= -->
+                    <article class="project-showcase-card reveal-item"
+                        data-project="expensetracker">
+                        <div class="project-grid-split">
+                            <!-- Left: Interactive Browser Mockup -->
+                            <div class="project-media-col">
+                                <div class="browser-window-frame">
+                                    <div class="browser-chrome-bar">
+                                        <div class="chrome-dots">
+                                            <span class="dot dot-red"></span>
+                                            <span class="dot dot-yellow"></span>
+                                            <span class="dot dot-green"></span>
+                                        </div>
+                                        <div class="chrome-address">
+                                            <span class="lock-icon">&#128274;</span>
+                                            <span class="url-text">bishal-expense-tracker.vercel.app</span>
+                                        </div>
+                                        <div class="chrome-badge">CLOUD DB</div>
+                                    </div>
+                                    <div class="browser-viewport" tabindex="0" role="button"
+                                        aria-label="View enlarged screenshot of ExpenseTracker project">
+                                        <img src="expensetracker-ss.png"
+                                            alt="ExpenseTracker web application interface displaying income, expense items, and running balance"
+                                            class="project-screenshot-img" width="1893" height="992" loading="lazy" />
+                                        <div class="viewport-hover-overlay">
+                                            <span class="expand-pill">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <circle cx="11" cy="11" r="8"></circle>
+                                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                                                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                                                </svg>
+                                                Click to Inspect Full Preview
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Editorial Details -->
+                            <div class="project-narrative-col">
+                                <div class="project-meta-kicker">
+                                    <span class="project-num">03 // CLOUD &amp; DATA SYSTEMS</span>
+                                    <span class="project-status">PRODUCTION LIVE</span>
+                                </div>
+
+                                <h3 class="project-title">
+                                    <a href="https://bishal-expense-tracker.vercel.app/" target="_blank"
+                                        rel="noopener noreferrer" class="project-title-link">
+                                        ExpenseTracker | Personal Finance Manager
+                                        <svg class="title-external-icon" width="18" height="18" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </a>
+                                </h3>
+
+                                <p class="project-description">
+                                    A mobile-first financial management platform designed to provide clear visibility
+                                    into monthly cash flow. Users configure custom starting balances, record categorized
+                                    income and expenditure entries, and monitor running balances with indexed
+                                    transaction histories. Built with full cloud persistence and isolated user data
+                                    partitions.
+                                </p>
+
+                                <div class="project-highlights">
+                                    <div class="highlight-item">
+                                        <span class="highlight-bullet">//</span>
+                                        <span>Serverless Next.js API endpoints communicating with MongoDB Atlas</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <span class="highlight-bullet">//</span>
+                                        <span>Secure multi-tenant authentication and session validation via Clerk</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <span class="highlight-bullet">//</span>
+                                        <span>Strict Mongoose schema models ensuring zero data drift for transactions</span>
+                                    </div>
+                                </div>
+
+                                <div class="project-tech-stack" aria-label="Technologies used">
+                                    <span class="tech-tag">Next.js</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                    <span class="tech-tag">Mongoose ODM</span>
+                                    <span class="tech-tag">Clerk Authentication</span>
+                                    <span class="tech-tag">Responsive UI</span>
+                                </div>
+
+                                <div class="project-action-links">
+                                    <a href="https://bishal-expense-tracker.vercel.app/" target="_blank"
+                                        rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                        <span>Launch Live App</span>
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg>
+                                    </a>
+
+                                    <a href="https://github.com/Bishal0019/ExpenseTracker" target="_blank"
+                                        rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                            <path
+                                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                        </svg>
+                                        <span>View Source</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             06. CONTACT SECTION: Architectural Dialogue & Channels
+             ========================================================= -->
+        <section id="contact" class="editorial-section contact-section" aria-label="Contact and Social Channels">
+            <div class="site-container">
+                <div class="section-header reveal-item">
+                    <div class="section-tag-group">
+                        <span class="section-index">[ 06 ]</span>
+                        <span class="section-kicker">INITIATE DIALOGUE &amp; CONNECT</span>
+                    </div>
+                    <div class="section-headline-split">
+                        <h2 class="section-headline">Let's Build Something Thoughtful Together</h2>
+                        <p class="section-subtext">
+                            Whether you're looking for a passionate software engineering intern, exploring a technical
+                            project collaboration, or just want to talk code &mdash; my inbox is open.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contact-layout-grid">
+                    <!-- Left: Large Direct Email Interaction Card -->
+                    <div class="contact-primary-card reveal-item">
+                        <div class="primary-card-header">
+                            <span class="contact-mode-tag">// PRIMARY CHANNEL</span>
+                            <span class="response-time-badge">Typically replies within 24 hours</span>
+                        </div>
+
+                        <div class="email-display-zone">
+                            <span class="email-label">DIRECT EMAIL ADDRESS</span>
+                            <div class="email-address-wrapper">
+                                <a href="mailto:bishalpal0019@gmail.com"
+                                    class="email-link-text">bishalpal0019@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="email-interactive-actions">
+                            <!-- One-click Copy Email Button with Tactile Feedback -->
+                            <button type="button" class="btn btn-primary copy-email-btn" id="copy-email-btn"
+                                data-email="bishalpal0019@gmail.com">
+                                <span class="copy-default-state">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" aria-hidden="true">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                    <span>Copy Email Address</span>
+                                </span>
+                                <span class="copy-success-state" aria-hidden="true">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" aria-hidden="true">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                    <span>Copied to Clipboard!</span>
+                                </span>
+                            </button>
+
+                            <a href="mailto:bishalpal0019@gmail.com?subject=Hello%20Bishal%20%E2%80%94%20Project%20Inquiry"
+                                class="btn btn-secondary">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span>Open in Mail Client</span>
+                            </a>
+                        </div>
+
+                        <!-- Direct Message Composer -->
+                        <div class="quick-composer-module">
+                            <span class="composer-title">// QUICK MESSAGE COMPOSER</span>
+                            <form id="quick-mail-form" class="composer-form">
+                                <div class="form-row">
+                                    <input type="text" id="sender-name" class="composer-input"
+                                        placeholder="Your Name / Organization" required />
+                                </div>
+                                <div class="form-row">
+                                    <input type="text" id="message-subject" class="composer-input"
+                                        placeholder="Subject (e.g. Internship Opportunity / Collaboration)" required />
+                                </div>
+                                <div class="form-row">
+                                    <textarea id="message-body" class="composer-textarea" rows="3"
+                                        placeholder="Brief note or project context..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-sm composer-send-btn">
+                                    <span>Draft &amp; Send Message</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Right: Structured Professional Profiles Grid -->
+                    <div class="contact-channels-grid reveal-item">
+                        <!-- LinkedIn Card -->
+                        <a href="https://linkedin.com/in/bishal-pal-b101a2323" target="_blank"
+                            rel="noopener noreferrer" class="channel-card">
+                            <div class="channel-header">
+                                <div class="channel-icon-box">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </div>
+                                <span class="channel-arrow">&#8599;</span>
+                            </div>
+                            <div class="channel-meta">
+                                <span class="channel-type">PROFESSIONAL NETWORK</span>
+                                <h3 class="channel-name">LinkedIn</h3>
+                                <p class="channel-handle">in/bishal-pal-b101a2323</p>
+                            </div>
+                        </a>
+
+                        <!-- GitHub Card -->
+                        <a href="https://github.com/Bishal0019" target="_blank" rel="noopener noreferrer"
+                            class="channel-card">
+                            <div class="channel-header">
+                                <div class="channel-icon-box">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                    </svg>
+                                </div>
+                                <span class="channel-arrow">&#8599;</span>
+                            </div>
+                            <div class="channel-meta">
+                                <span class="channel-type">CODE REPOSITORY</span>
+                                <h3 class="channel-name">GitHub</h3>
+                                <p class="channel-handle">@Bishal0019</p>
+                            </div>
+                        </a>
+
+                        <!-- Instagram Card -->
+                        <a href="https://www.instagram.com/bishal_.19._/" target="_blank" rel="noopener noreferrer"
+                            class="channel-card">
+                            <div class="channel-header">
+                                <div class="channel-icon-box">
+                                    <svg width="22" height="22" viewBox="0 0 32 32" fill="currentColor">
+                                        <path
+                                            d="M20.445 5h-8.891A6.559 6.559 0 0 0 5 11.554v8.891A6.559 6.559 0 0 0 11.554 27h8.891a6.56 6.56 0 0 0 6.554-6.555v-8.891A6.557 6.557 0 0 0 20.445 5zm4.342 15.445a4.343 4.343 0 0 1-4.342 4.342h-8.891a4.341 4.341 0 0 1-4.341-4.342v-8.891a4.34 4.34 0 0 1 4.341-4.341h8.891a4.342 4.342 0 0 1 4.341 4.341l.001 8.891z" />
+                                        <path
+                                            d="M16 10.312c-3.138 0-5.688 2.551-5.688 5.688s2.551 5.688 5.688 5.688 5.688-2.551 5.688-5.688-2.55-5.688-5.688-5.688zm0 9.163a3.475 3.475 0 1 1-.001-6.95 3.475 3.475 0 0 1 .001 6.95zM21.7 8.991a1.363 1.363 0 1 1-1.364 1.364c0-.752.51-1.364 1.364-1.364z" />
+                                    </svg>
+                                </div>
+                                <span class="channel-arrow">&#8599;</span>
+                            </div>
+                            <div class="channel-meta">
+                                <span class="channel-type">VISUAL JOURNAL &amp; TRAVEL</span>
+                                <h3 class="channel-name">Instagram</h3>
+                                <p class="channel-handle">@bishal_.19._</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================================================
+         FOOTER: Minimalist Architectural Colophon
+         ========================================================= -->
+    <footer class="site-footer">
+        <div class="site-container">
+            <div class="footer-top-row">
+                <div class="footer-identity-col">
+                    <span class="footer-brand">Bishal Pal</span>
+                    <p class="footer-sub">
+                        Computer Science &amp; Engineering Student &bull; KIIT University, Bhubaneswar
+                    </p>
+                </div>
+
+                <div class="footer-signature-col">
+                    <span class="signature-caption">Crafted &amp; Engineered by</span>
+                    <img src="pixel_studio_20250608_06370682-removebg-preview (1).png" alt="Bishal Pal digital signature"
+                        class="footer-signature-img" width="120" height="32" loading="lazy" />
+                </div>
+
+                <div class="footer-back-to-top">
+                    <a href="#hero" class="back-to-top-btn" aria-label="Return to top of page">
+                        <span>Top</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" aria-hidden="true">
+                            <line x1="12" y1="19" x2="12" y2="5"></line>
+                            <polyline points="5 12 12 5 19 12"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-divider" aria-hidden="true"></div>
+
+            <div class="footer-bottom-row">
+                <p class="copyright-notice">
+                    &copy; <span id="current-year">2026</span> Bishal Pal. All rights reserved.
+                </p>
+                <div class="colophon-meta">
+                    <span>Vanilla HTML5 &bull; CSS Custom Properties &bull; Modular JavaScript</span>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Image Lightbox Modal for Projects -->
+    <div class="lightbox-modal" id="image-lightbox" aria-hidden="true" role="dialog" aria-modal="true"
+        aria-label="Image preview">
+        <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+        <div class="lightbox-dialog">
+            <button type="button" class="lightbox-close-btn" id="lightbox-close" aria-label="Close image preview">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="lightbox-image-container">
+                <img src="" alt="" id="lightbox-img" class="lightbox-img" />
+            </div>
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Core Script -->
     <script src="script.js"></script>
 </body>
 
 </html>
-
